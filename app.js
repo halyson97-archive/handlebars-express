@@ -1,27 +1,23 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var request = require('request');
+const express = require('express');
+const bodyParser = require('body-parser');
+const request = require('request');
 
-var exphbs = require('express-handlebars');
+const exphbs = require('express-handlebars');
 
-var app = express();
+const app = express();
 
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/', require('./routes'));
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
-app.use(function(req,res,next){
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+app.get('/', function (req, res) {
+	console.log('render home')
+    res.render('home');
 });
 
-app.use(function(err,req,res,next){
-  console.log('Not found');
-  console.log(err);
-  res.status(err.status || 500).json({err:err.message});
-});
+
 
 module.exports = app;
