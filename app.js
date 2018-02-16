@@ -15,9 +15,14 @@ app.set('view engine', 'handlebars');
 
 app.get('/', function (req, res) {
 	console.log('render home')
-    res.render('home');
+    res.render('home', {prop: 'Luiz Bixao'});
 });
 
+app.get('/teste', function (req, res) {
+	console.log('render teste')
+    res.render('teste');
+});
 
+app.use(express.static('public/'));
 
 module.exports = app;
