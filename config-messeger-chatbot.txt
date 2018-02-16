@@ -1,0 +1,22 @@
+---------------------------------------------------------------------
+---------------Add saudação------------------------------------------
+---------------------------------------------------------------------
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "setting_type" : "greeting",
+  "greeting":{
+  	"text": "Ola, funciona por favor!"
+  } 
+}' "https://graph.facebook.com/v2.6/me/thread_settings?access_token=<token>"    
+
+
+---------------------------------------------------------------------
+--------------Add botao começar--------------------------------------
+---------------------------------------------------------------------
+
+curl -X POST application/json" -d '{ 
+  "get_started":{
+    "payload":"GET_STARTED_PAYLOAD"
+  }
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=<token>" 

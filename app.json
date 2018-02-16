@@ -1,0 +1,7 @@
+{
+  "name": "Cardapio01 - ChatBot",
+  "description": "ChatBot para cardapio01",
+  "repository": "https://github.com/devowllab/Cardapio01-ChatBot",
+  "keywords": ["node", "express", "chatbot"],
+  "image": "chatbot/nodejs"
+}
